@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+	<div class="text-red-300">yo</div>
 </template>
