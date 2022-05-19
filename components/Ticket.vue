@@ -13,7 +13,7 @@ const levelColor = computed(() => {
 </script>
 <template>
 	<div
-		class="bg-white p-4 mb-3 shadow-md border-x border-gray-100 rounded-md flex flex-col-reverse space-y-2 space-y-reverse relative"
+		class="bg-white p-4 mb-3 shadow-md border-x border-gray-100 rounded-md flex flex-col-reverse space-y-2 space-y-reverse relative hover:cursor-grabbing"
 	>
 		<div>{{ ticket.title }}</div>
 		<div class="text-gray-400 text-sm">
