@@ -1,7 +1,14 @@
 <script setup>
-import { ref } from 'vue';
+import { computed } from 'vue';
 const props = defineProps({
 	ticket: Object,
+});
+const levelColor = computed(() => {
+	if (props.ticket.level === 'Low Level') return 'bg-green-100 text-green-700';
+	if (props.ticket.level === 'Medium Level')
+		return 'bg-yellow-100 text-yellow-700';
+	if (props.ticket.level === 'High Level') return 'bg-red-100 text-red-700';
+	return 'bg-gray-100 text-gray-700';
 });
 </script>
 <template>
@@ -30,8 +37,10 @@ const props = defineProps({
 			}}</span>
 		</div>
 		<div
-			v-if="ticket.level == 'Low Level'"
-			class="absolute top-4 right-4 bg-gray-100 text-green-700 font-semibold text-sm px-3 rounded-full"
+			:class="
+				'absolute top-4 right-4  font-semibold text-sm px-3 rounded-full ' +
+				levelColor
+			"
 		>
 			{{ ticket.level }}
 		</div>
